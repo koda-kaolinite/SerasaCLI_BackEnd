@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TransformeseApp", "TransformeseApp\TransformeseApp.fsproj", "{FB627B14-7A08-4D16-97C6-9684F02CDB1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB627B14-7A08-4D16-97C6-9684F02CDB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB627B14-7A08-4D16-97C6-9684F02CDB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB627B14-7A08-4D16-97C6-9684F02CDB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB627B14-7A08-4D16-97C6-9684F02CDB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
