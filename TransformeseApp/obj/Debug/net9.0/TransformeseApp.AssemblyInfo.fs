@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("TransformeseApp")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d16107ad595900df5632b2a14f8ba9f6146dc556")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("TransformeseApp")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("TransformeseApp")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
