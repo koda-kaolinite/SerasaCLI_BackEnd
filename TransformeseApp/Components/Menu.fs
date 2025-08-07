@@ -1,2 +1,2 @@
-module TransformeseApp.Components.Menu
+module Components.Menu
 

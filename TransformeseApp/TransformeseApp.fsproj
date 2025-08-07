@@ -7,8 +7,14 @@
 
     <ItemGroup>
         <Compile Include="Shared\ConsoleUtils.fs"/>
+        <Compile Include="Components\Menu.fs"/>
         <Compile Include="Features\Conditional.fs"/>
         <Compile Include="Program.fs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Spectre.Console" Version="0.50.1-preview.0.24"/>
+        <PackageReference Include="Spectre.Console.Cli" Version="0.50.1-preview.0.21"/>
     </ItemGroup>
 
 </Project>
