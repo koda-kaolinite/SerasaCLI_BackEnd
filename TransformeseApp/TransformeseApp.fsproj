@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Shared\ConsoleUtils.fs"/>
+        <Compile Include="Features\Conditional.fs"/>
         <Compile Include="Program.fs"/>
     </ItemGroup>
 
