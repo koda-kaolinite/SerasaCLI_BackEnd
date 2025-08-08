@@ -1,61 +1,75 @@
-﻿module TransformeseApp
+﻿open Argu
 
-open System
-open Spectre.Console
-open Components
+// --- Definição dos Comandos da CLI ---
+// TODO: Defina aqui os comandos que seu backend vai aceitar.
+type ArgumentosCLI =
+    | ComandoA of parametro: string
+    | ComandoB of valorNumerico: int
+    | ComandoC
 
-// A sua arte ASCII está perfeita aqui.
-Logo.printLogo ()
+    interface IArgParserTemplate with
+        member s.Usage =
+            match s with
+            | ComandoA _ -> "Descrição para o Comando A."
+            | ComandoB _ -> "Descrição para o Comando B."
+            | ComandoC -> "Descrição para o Comando C."
 
-// Função para desenhar o menu principal
-let showMenu () =
-    printfn "===================================================="
-    printfn "             MENU DE EXEMPLOS F#                  "
-    printfn "===================================================="
-    printfn "1- Condicional if-else"
-    // ... (outras opções)
-    printfn "0- Sair"
-    printfn "===================================================="
-    printfn "\nEscolha uma opção."
+// --- Funções de Lógica de Negócio ---
+// Cada comando agora tem sua própria função.
+// Elas retornam uma string (o JSON de sucesso) ou lançam uma exceção em caso de erro.
 
-// Função para pausar e esperar o usuário pressionar Enter
-let pressEnterToContinue () =
-    printfn "\nPressione Enter para continuar..."
-    Console.ReadLine() |> ignore
+let executarComandoA (param: string) : string =
+    eprintfn "LÓGICA: Executando ComandoA com parâmetro: %s" param
+    // TODO: Implementar a lógica real aqui.
+    // Se a lógica for bem-sucedida, retorne o JSON de sucesso.
+    "{\"status\":\"ok_comando_a\"}"
 
-// O loop principal que gerencia a aplicação
-let rec mainLoop () =
-    Logo.printLogo () // Mostra o logo e o cabeçalho a cada iteração
-    showMenu () // Mostra as opções do menu
+let executarComandoB (valor: int) : string =
+    eprintfn "LÓGICA: Executando ComandoB com valor: %d" valor
+    // TODO: Implementar a lógica real aqui.
+    // Exemplo de como sinalizar um erro de negócio:
+    // if valor < 0 then failwith "O valor não pode ser negativo."
+    "{\"status\":\"ok_comando_b\"}"
 
-    let userSelection = Console.ReadLine()
+let executarComandoC () : string =
+    eprintfn "LÓGICA: Executando ComandoC."
+    // TODO: Implementar a lógica real aqui.
+    "{\"status\":\"ok_comando_c\"}"
 
-    match userSelection with
-    | "1" ->
-        // Simula a execução de uma funcionalidade
-        AnsiConsole.MarkupLine("[green]Executando a lógica do if-else...[/]")
-        pressEnterToContinue () // Pausa para o usuário ver o resultado
-    | "0" -> AnsiConsole.MarkupLine("[red]Saindo...[/]")
-    | _ ->
-        AnsiConsole.MarkupLine("[bold red]Opção Inválida.[/]")
-        pressEnterToContinue () // Pausa para o usuário ver a mensagem de erro
 
-    // Continua o loop apenas se a opção não for para sair
-    if userSelection <> "0" then
-        mainLoop ()
+// --- Ponto de Entrada Otimizado ---
 
 [<EntryPoint>]
 let main argv =
-    // 1. Mostra o cabeçalho pela primeira vez
-    Logo.printLogo ()
+    // A função 'main' agora é apenas uma coordenadora.
+    try
+        // 1. Parseia os argumentos
+        let parser = ArgumentParser.Create<ArgumentosCLI>(programName = "backend.exe")
+        let resultadoParse = parser.Parse(argv)
 
-    // 2. Adiciona a pausa que você pediu aqui!
-    pressEnterToContinue ()
+        // 2. Chama a função de lógica apropriada
+        let respostaJson =
+            match resultadoParse.GetAllResults() with
+            | [ ComandoA param ] -> executarComandoA param
+            | [ ComandoB valor ] -> executarComandoB valor
+            | [ ComandoC ] -> executarComandoC ()
+            | _ ->
+                // Este caso lida com situações inesperadas.
+                failwith "Comando inválido ou não fornecido."
 
-    // 3. Inicia o loop principal do menu
-    mainLoop ()
+        // 3. Imprime a resposta de sucesso
+        printfn "%s" respostaJson
 
-    printfn "O programa terminou. Pressione Enter para fechar."
-    Console.ReadLine() |> ignore // <--- ADICIONE ESTA LINHA
+        // 4. Retorna o código de sucesso
+        0
 
-    0 // Retorna código de sucesso
+    with ex ->
+        // Se qualquer parte acima falhar (parsing ou lógica de negócio),
+        // a exceção é capturada aqui.
+        eprintfn "ERRO: %s" ex.Message
+
+        // TODO: Gerar uma resposta JSON de erro e imprimir em stderr.
+        // Exemplo: eprintfn "{\"success\":false, \"error\":\"%s\"}" ex.Message
+
+        // Retorna o código de erro
+        1
