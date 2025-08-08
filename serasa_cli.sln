@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TransformeseApp", "TransformeseApp\TransformeseApp.fsproj", "{FB627B14-7A08-4D16-97C6-9684F02CDB1D}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "serasa_cli", "serasa_cli\serasa_cli.fsproj", "{FB627B14-7A08-4D16-97C6-9684F02CDB1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

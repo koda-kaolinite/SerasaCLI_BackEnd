@@ -1,7 +1,11 @@
 module Features.Conditional
 
-// Importamos apenas o que precisamos do nosso kernel compartilhado
-open Shared.ConsoleUtils
+// Função auxiliar para ler uma string do console e converter para float
+let readStringAndConvertToFloat32 () : float32 option =
+    let input = System.Console.ReadLine()
+    match System.Single.TryParse(input) with
+    | (true, value) -> Some value
+    | (false, _) -> None
 
 let run () =
     printfn "--- Condicional If-Else ---"
@@ -21,5 +25,6 @@ let run () =
             printfn "Os números são iguais."
     | _ -> printfn "Entrada inválida. Por favor, digite apenas números válidos."
 
-    printfn "\nPressione Enter para voltar ao menu..."
+    printfn "
+Pressione Enter para voltar ao menu..."
     System.Console.ReadLine() |> ignore
