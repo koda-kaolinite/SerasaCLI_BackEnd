@@ -1,25 +1,25 @@
-namespace Transforme.domain.person
+namespace Transforme.domain.schoolUnity
 
 open System
 
-type Person() =
-    let mutable _privateName: string option = None
+type SchoolUnity() =
+    let mutable _name: string option = None
     member val Id: Guid option = None with get, set
 
     member this.Name
-        with get (): string option = _privateName
+        with get (): string option = _name
         and set (value) =
             match value with
             | Some str when String.IsNullOrWhiteSpace(str) ->
-                invalidArg (nameof value) "O Nome da pessoa não pode ser nulo."
-            | _ -> _privateName <- value
+                invalidArg (nameof value) "Unidade escolar não pode ser nulo."
+            | _ -> _name <- value
 
     static member Create(id: Guid, name: string) =
-        let person = Person()
+        let schoolUnity = SchoolUnity()
 
-        person.Id <- Some id
-        person.Name <- Some name
-        person
+        schoolUnity.Id <- Some id
+        schoolUnity.Name <- Some name
+        schoolUnity
 
     override this.ToString() =
         let idStr =
@@ -32,4 +32,4 @@ type Person() =
             | Some nome -> nome
             | None -> "N/A"
 
-        $"Person(Id = {idStr}, Nome = \"{nameStr}\")"
+        $"SchoolUnity(Id = {idStr}, Nome = \"{nameStr}\")"
