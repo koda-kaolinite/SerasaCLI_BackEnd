@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Models.fs"/>
+        <Compile Include="Database.fs"/>
+        <Compile Include="repository\CourseRepository.fs"/>
+        <Compile Include="repository\PersonRepository.fs"/>
+        <Compile Include="repository\SchoolUnityRepository.fs"/>
+        <Compile Include="repository\StudentRepository.fs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Tse_Backend.Domain\Tse_Backend.Domain.csproj"/>
+        <ProjectReference Include="..\Tse_Backend.Application\Tse_Backend.Application.fsproj"/>
+    </ItemGroup>
+
+</Project>

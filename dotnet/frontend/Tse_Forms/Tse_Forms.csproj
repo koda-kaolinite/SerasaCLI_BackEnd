@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Tse_Forms</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Update="forms\StudentForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\backend\Tse_Backend.Domain\Tse_Backend.Domain.csproj"/>
+        <ProjectReference Include="..\..\backend\Tse_Backend.Application\Tse_Backend.Application.fsproj"/>
+        <ProjectReference Include="..\..\backend\Tse_Backend.Infrastructure\Tse_Backend.Infrastructure.fsproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9"/>
+    </ItemGroup>
+
+</Project>

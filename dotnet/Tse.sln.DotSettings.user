@@ -1,0 +1,34 @@
+﻿<wpf:ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib"
+                        xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xml:space="preserve">
+	<s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AComboBox_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003Feb1c271718af4f5b04820e329861f8e42fed6ab1119b4f981b15107f4327b4_003FComboBox_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AControl_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F039307c2fa2545cd802cb86d49b3afc7cef930_003Fd3_003F3e7c83fd_003FControl_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AEnumerable_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F505d92d4dd474b5baf908fd6bb70bae4a0938_003Fb9_003F9bd8c547_003FEnumerable_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AGuid_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003F92f879b14c3424dd149e6985f9a6baf181248b4b7a17628f3d030b1a79934_003FGuid_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AListControl_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fce3bf57be0ae458f603eaa580413feaa11ab843b9873adf62dab4d695c072_003FListControl_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AObject_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F243a037ca7a04510a506adfdd94befbac90930_003F3b_003Fc84a5bee_003FObject_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:String
+            x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ARuntimeHelpers_002ECoreCLR_002Ecs_002Fl_003AC_0021_003FUsers_003Fpedro_002Ehcsinezio_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003F54c7fa9daf3ab775e3ebabc3f3948a6e2a484886fa1196f813b98e17e36aa49_003FRuntimeHelpers_002ECoreCLR_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TransformeApp_002FStudentForm/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Tse_005FUI_002FTse_005FForms_002Fforms_002FCourseForm/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Tse_005FUI_002FTse_005FForms_002Fforms_002FSchoolUnity/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Tse_005FUI_002FTse_005FForms_002Fforms_002FStartMenu/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Tse_005FUI_002FTse_005FForms_002Fforms_002FStudentForm/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=WinFormsApp1_002FForm1/@EntryIndexedValue">False</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=WinFormsApp1_002FForm1/@EntryIndexRemoved">True</s:Boolean>
+    <s:Boolean
+            x:Key="/Default/ResxEditorPersonal/CheckedGroups/=WinFormsApp1_002FStartMenu/@EntryIndexedValue">True</s:Boolean>
+    <s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

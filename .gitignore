@@ -1,6 +1,25 @@
+#Dotnet Ignore
 # Build artifacts
 [Bb]in/
 [Oo]bj/
 
 # Rider files
 .idea/
+.vs
+
+#Go Ingore
+# Binários compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Diretórios de IDE
+.idea/
+
+# Arquivos de log
+*.log
+commit_message.txt 

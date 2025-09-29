@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Program.fs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Argu" Version="6.1.1"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Tse_Backend.Domain\Tse_Backend.Domain.csproj"/>
+        <ProjectReference Include="..\Tse_Backend.Application\Tse_Backend.Application.fsproj"/>
+        <ProjectReference Include="..\Tse_Backend.Infrastructure\Tse_Backend.Infrastructure.fsproj"/>
+    </ItemGroup>
+
+</Project>
