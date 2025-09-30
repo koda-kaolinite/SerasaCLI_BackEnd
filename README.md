@@ -1,4 +1,4 @@
-# Serasa CLI Project (Multi-Repo)
+# Serasa CLI Project
 
 Welcome to the Serasa CLI Project repository. This is a monorepo that hosts multiple interconnected projects, each with its own technology and purpose.
 
