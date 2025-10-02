@@ -10,29 +10,21 @@ type DomainStudent = Tse_Backend.Domain.Student
 
 // The createRepository function is the factory for our repository.
 // It takes dependencies as arguments.
-let createRepository
-    (personRepo: IPersonRepository)
-    (courseRepo: ICourseRepository)
-    (schoolUnityRepo: ISchoolUnityRepository)
-    : IStudentRepository =
+let createRepository (personRepo: IPersonRepository) (courseRepo: ICourseRepository) (schoolUnityRepo: ISchoolUnityRepository) : IStudentRepository =
 
     // --- Private helper functions ---
     // These are now defined inside the factory function so they can access the injected repositories.
     let toInfraStudent (domainStudent: DomainStudent) : Student =
         { Id = domainStudent.Id
           PersonId = domainStudent.Person.Id
-          CourseId = Option.ofObj domainStudent.Course 
-            |> Option.map (fun c -> c.Id)
-          SchoolUnityId = Option.ofObj domainStudent.SchoolUnity
-            |> Option.map (fun su -> su.Id) }
+          CourseId = Option.ofObj domainStudent.Course |> Option.map (fun c -> c.Id)
+          SchoolUnityId = Option.ofObj domainStudent.SchoolUnity |> Option.map (fun su -> su.Id) }
 
     let toDomainStudent (infraStudent: Student) : DomainStudent =
         let person =
             match personRepo.getById infraStudent.PersonId with
             | Some p -> p
-            | None ->
-                failwith
-                    $"Data inconsistency: Person with id {infraStudent.PersonId} not found for student {infraStudent.Id}"
+            | None -> failwith $"Data inconsistency: Person with id {infraStudent.PersonId} not found for student {infraStudent.Id}"
 
         let course = infraStudent.CourseId |> Option.bind courseRepo.getById |> Option.toObj
 
@@ -85,8 +77,7 @@ let createRepository
 
     let getAllImpl () : DomainStudent list =
         debug "Getting all students"
-        getStudents () 
-          |> List.map toDomainStudent
+        getStudents () |> List.map toDomainStudent
 
     // --- Public repository implementation ---
     // The factory returns a record matching the interface shape.

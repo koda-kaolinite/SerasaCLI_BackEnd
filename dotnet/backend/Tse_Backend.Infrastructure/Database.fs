@@ -11,26 +11,29 @@ type DbContent =
     { Courses: Course list
       Persons: Person list
       Students: Student list
-      SchoolUnities: SchoolUnity list }
+      SchoolUnities: SchoolUnity list
+      Users: User list }
 
 let appDataPath =
-    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+    Environment.GetFolderPath Environment.SpecialFolder.ApplicationData
 
 let appFolder = Path.Combine(appDataPath, "Tse")
-let _ = Directory.CreateDirectory(appFolder)
+let _ = Directory.CreateDirectory appFolder
 let dbPath = Path.Combine(appFolder, "database.json")
 
 let mutable courses: Course list = []
 let mutable persons: Person list = []
 let mutable students: Student list = []
 let mutable schoolUnities: SchoolUnity list = []
+let mutable users: User list = []
 
 let save () =
     let content =
         { Courses = courses
           Persons = persons
           Students = students
-          SchoolUnities = schoolUnities }
+          SchoolUnities = schoolUnities
+          Users = users }
 
     let options = JsonSerializerOptions(WriteIndented = true)
     let json = JsonSerializer.Serialize(content, options)
@@ -41,7 +44,7 @@ let load () =
     if File.Exists dbPath then
         let json = File.ReadAllText dbPath
 
-        if not (String.IsNullOrWhiteSpace(json)) then
+        if not (String.IsNullOrWhiteSpace json) then
             try
                 let options = JsonSerializerOptions()
                 let content = JsonSerializer.Deserialize<DbContent>(json, options)
@@ -49,6 +52,7 @@ let load () =
                 persons <- content.Persons
                 students <- content.Students
                 schoolUnities <- content.SchoolUnities
+                users <- content.Users
             with ex ->
                 error $"Error deserializing the database file: \"%s{ex.Message}\". Creating a new one."
                 save ()
@@ -70,3 +74,6 @@ let setStudents value = students <- value
 
 let getSchoolUnities () = schoolUnities
 let setSchoolUnities value = schoolUnities <- value
+
+let getUsers () = users
+let setUsers value = users <- value

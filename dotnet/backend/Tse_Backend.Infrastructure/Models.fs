@@ -16,3 +16,9 @@ type Student =
       PersonId: Guid
       CourseId: Guid option
       SchoolUnityId: Guid option }
+
+type User =
+    { Id: Guid
+      PersonId: Guid
+      Username: string
+      Password: string }

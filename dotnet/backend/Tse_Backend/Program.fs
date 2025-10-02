@@ -16,14 +16,14 @@ let private printResult identifier result =
 let configureServices () =
     let services = ServiceCollection()
     // Register simple repositories using their static instance
-    services.AddSingleton<ICourseRepository>(Tse_Backend.Infrastructure.CourseRepository.repository)
+    services.AddSingleton<ICourseRepository> CourseRepository.repository |> ignore
+
+    services.AddSingleton<IPersonRepository> PersonRepository.repository |> ignore
+
+    services.AddSingleton<ISchoolUnityRepository> SchoolUnityRepository.repository
     |> ignore
 
-    services.AddSingleton<IPersonRepository>(Tse_Backend.Infrastructure.PersonRepository.repository)
-    |> ignore
-
-    services.AddSingleton<ISchoolUnityRepository>(Tse_Backend.Infrastructure.SchoolUnityRepository.repository)
-    |> ignore
+    services.AddSingleton<IUserRepository> UserRepository.repository |> ignore
 
     // Register the complex repository using a factory to inject its dependencies
     services.AddSingleton<IStudentRepository>(fun serviceProvider ->
@@ -37,6 +37,7 @@ let configureServices () =
     services.AddTransient<PersonService>() |> ignore
     services.AddTransient<SchoolUnityService>() |> ignore
     services.AddTransient<StudentService>() |> ignore
+    services.AddTransient<UserService>() |> ignore
     services.BuildServiceProvider()
 
 // --------------------------------------------------------------------------------------
@@ -50,7 +51,7 @@ let main argv =
 
     printfn "Application started. CLI argument parsing is currently disabled."
     // Add test code here to manually invoke services if needed, for example:
-    // let courseService = serviceProvider.GetRequiredService<CourseService>()
-    // printResult "Course.GetAll" (courseService.GetAll())
+    let userService = serviceProvider.GetRequiredService<UserService>()
+    printResult "User.GetAll" (userService.GetAll())
 
     0 // Success

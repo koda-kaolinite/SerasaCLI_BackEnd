@@ -50,3 +50,11 @@ type IStudentRepository =
       remove: Guid -> unit
       getAll: unit -> Student list
       convertToDomain: obj list -> Student list }
+
+// Abstraction for User Repository
+type IUserRepository =
+    { add: User -> User
+      getById: Guid -> Student option
+      update: User -> User
+      remove: Guid -> unit
+      getAll: unit -> User list }

@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="Logger.fs"/>
         <Compile Include="Abstractions.fs"/>
-        <Compile Include="Person.fs"/>
-        <Compile Include="SchoolUnity.fs"/>
-        <Compile Include="Course.fs"/>
-        <Compile Include="Student.fs"/>
+        <Compile Include="PersonService.fs"/>
+        <Compile Include="SchoolUnityService.fs"/>
+        <Compile Include="CourseService.fs"/>
+        <Compile Include="StudentService.fs"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -29,3 +29,5 @@ public record Person
         return $"Person(Id = {Id:D}, Name = \"{Name}\")";
     }
 }
+
+// Todo: Person must become a Value Object.
