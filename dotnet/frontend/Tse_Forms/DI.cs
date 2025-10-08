@@ -36,9 +36,11 @@ public static class DI
         });
 
         // Register application services
-        services.AddTransient<CourseService>();
         services.AddTransient<PersonService>();
         services.AddTransient<SchoolUnityService>();
         services.AddTransient<StudentService>();
+
+        // Register FontService as a singleton
+        services.AddSingleton<FontService>();
     }
 }

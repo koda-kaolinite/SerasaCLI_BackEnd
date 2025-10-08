@@ -1,3 +1,4 @@
+using Tse_Forms.control.ActionsMenu;
 using Tse_Forms.forms;
 using static Tse_Backend.Infrastructure.Database;
 
@@ -14,7 +15,7 @@ internal static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        load(); // Load the backend database at application startup
-        Application.Run(new StartMenu());
+		load(); // Load the backend database at application startup
+        Application.Run(new Dashboard());
     }
 }

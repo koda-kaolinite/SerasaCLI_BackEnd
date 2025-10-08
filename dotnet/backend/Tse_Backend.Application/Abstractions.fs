@@ -54,7 +54,7 @@ type IStudentRepository =
 // Abstraction for User Repository
 type IUserRepository =
     { add: User -> User
-      getById: Guid -> Student option
+      getById: Guid -> User option
       update: User -> User
       remove: Guid -> unit
       getAll: unit -> User list }

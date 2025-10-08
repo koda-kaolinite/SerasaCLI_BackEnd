@@ -12,6 +12,7 @@
         <Compile Include="SchoolUnityService.fs"/>
         <Compile Include="CourseService.fs"/>
         <Compile Include="StudentService.fs"/>
+        <Compile Include="UserService.fs"/>
     </ItemGroup>
 
     <ItemGroup>

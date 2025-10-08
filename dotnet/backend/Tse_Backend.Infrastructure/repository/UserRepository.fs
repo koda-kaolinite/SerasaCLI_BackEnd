@@ -13,11 +13,12 @@ type DomainPerson = Tse_Backend.Domain.Person
 let private toInfraUser (domainUser: DomainUser) : User =
     { Id = domainUser.Id
       PersonId = domainUser.Person.Id
+      Username = domainUser.Username
       Email = domainUser.Email
       Password = domainUser.Password }
 
 let private toDomainUser (infraUser: User) (person: DomainPerson) : DomainUser =
-    DomainUser.Create(infraUser.Id, person, infraUser.Email, infraUser.Password)
+    DomainUser.Create(infraUser.Id, person, infraUser.Username, infraUser.Email, infraUser.Password)
 
 let private findPersonById (personId: Guid) : DomainPerson option =
     let personOpt = getPersons () |> List.tryFind (fun (p: Person) -> p.Id = personId)

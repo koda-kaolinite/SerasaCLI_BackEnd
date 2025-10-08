@@ -21,4 +21,5 @@ type User =
     { Id: Guid
       PersonId: Guid
       Username: string
+      Email: string
       Password: string }

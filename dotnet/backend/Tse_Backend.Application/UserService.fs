@@ -6,12 +6,12 @@ open Tse_Backend.Application.Logger
 open Tse_Backend.Application.Abstractions
 
 type UserService(userRepo: IUserRepository, personRepo: IPersonRepository) =
-    member _.Create(personId: Guid, email: string, password: string) : Result<User, string> =
+    member _.Create(personId: Guid, username: string, email: string, password: string) : Result<User, string> =
         try
             info $"Creating new user for person with id: %A{personId}"
             match personRepo.getById personId with
             | Some person ->
-                let user = User.Create(person, email, password)
+                let user = User.Create(person, username, email, password)
                 let createdUser = userRepo.add user
                 Ok createdUser
             | None -> Error $"Person with id %A{personId} not found."
@@ -25,12 +25,12 @@ type UserService(userRepo: IUserRepository, personRepo: IPersonRepository) =
         | Some user -> Ok user
         | None -> Error $"User with id %A{id} not found."
 
-    member _.Update(id: Guid, personId: Guid, email: string, password: string) : Result<User, string> =
+    member _.Update(id: Guid, personId: Guid, username: string, email: string, password: string) : Result<User, string> =
         try
             info $"Updating user with id: %A{id}"
             match personRepo.getById personId with
             | Some person ->
-                let user = User.Create(id, person, email, password)
+                let user = User.Create(id, person, username, email, password)
                 let updatedUser = userRepo.update user
                 Ok updatedUser
             | None -> Error $"Person with id %A{personId} not found."

@@ -1,15 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup/>
-    <ItemGroup>
-        <Compile Update="forms\CourseForm.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Update="forms\SchoolUnity.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Update="forms\StartMenu.cs">
-            <SubType>Form</SubType>
-        </Compile>
-    </ItemGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="control\window\CloseWindowButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="control\window\MaximizeMinimizeWindowButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="control\window\MinimizeWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="control\window\WindowBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="forms\Dashboard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\disabled\CourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\disabled\SchoolUnityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\disabled\StartMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
